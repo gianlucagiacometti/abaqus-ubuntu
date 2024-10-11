@@ -22,12 +22,19 @@ the installation, locate all the **Linux.sh** files in the Abaqus installation f
 in each of them:
 
 path_to_abaqus_installation_folder/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/3/NETVIBES_Exalead_CloudView/Linux64/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/3/SIMULIA_FLEXnet_LicenseServer/Linux64/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/3/Search_Doc/Linux64/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/4/SIMULIA_EstablishedProducts/Linux64/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/5/SIMULIA_Documentation/AllOS/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/5/SIMULIA_EstablishedProducts_CAA_API/Linux64/1/inst/common/init/Linux.sh
+
 path_to_abaqus_installation_folder/5/SIMULIA_Isight/Linux64/1/inst/common/init/Linux.sh
 
 ```sh
@@ -106,16 +113,16 @@ The exact way to setup a license depends on the type of license that you have. F
 ### FlexNET
 To specify a FlexNET server, execute:
 ```sh
-sudo gedit /usr/SIMULIA/EstProducts/2022/linux_a64/SMA/site/custom_v6.env
+sudo gedit /usr/SIMULIA/EstProducts/2023/linux_a64/SMA/site/custom_v6.env
 ```
 
 and then change the license server type to FLEXNET and the abaquslm_license_file to the one of your license
 
 ```sh
-# Installation of Established Products 2022
+# Installation of Established Products 2023
 
 # Day Month date hh:mm:ss yyyy
-  plugin_central_dir="/var/DassaultSystemes/SIMULIA/CAE/plugins/2022"
+  plugin_central_dir="/var/DassaultSystemes/SIMULIA/CAE/plugins/2023"
   license_server_type=FLEXNET
   abaquslm_license_file="<port>@<your_domain>"
 ```
@@ -136,7 +143,7 @@ where `<port>` is the port used on the license server, and `<your_domain>` the d
 
 In order to run Abaqus from any location, execute the following command: 
 ```sh
-sudo ln /var/DassaultSystemes/SIMULIA/Commands/abq2022 /usr/bin/abaqus
+sudo ln /var/DassaultSystemes/SIMULIA/Commands/abq2023 /usr/bin/abaqus
 ```
 
 ## OpenGL Errors
@@ -161,7 +168,7 @@ gedit ~/.local/share/applications/abaquscae.desktop
   Type=Application
   Version=1.0
   Name=Abaqus Viewer
-  Icon=/usr/SIMULIA/EstProducts/2022/linux_a64/CAEresources/graphic/icons/icoR_application.png
+  Icon=/usr/SIMULIA/EstProducts/2023/linux_a64/CAEresources/graphic/icons/icoR_application.png
   Exec=sh -c "export FILE=%u && cd $(dirname $FILE) && abaqus viewer database=$FILE -mesa"
   Terminal=true
   Categories=Science;
@@ -178,7 +185,7 @@ gedit ~/.local/share/applications/abaqusviewer.desktop
   Type=Application
   Version=1.0
   Name=Abaqus Viewer
-  Icon=/usr/SIMULIA/EstProducts/2022/linux_a64/CAEresources/graphic/icons/icoR_application.png
+  Icon=/usr/SIMULIA/EstProducts/2023/linux_a64/CAEresources/graphic/icons/icoR_application.png
   Exec=sh -c "export FILE=%u && cd $(dirname $FILE) && abaqus viewer database=$FILE -mesa"
   Terminal=true
   Categories=Science;
@@ -290,7 +297,7 @@ Install MS core fonts and RESTART:
 I didn't get the following font size increase working, I only found the file `EstProducts` file and nothing such as `/opt/SIMULIA` or `opt/DassaultSystems`. I expected that the following file would do the trick, but it doesn't:
 
 ```sh
-sudo gedit /usr/SIMULIA/EstProducts/2022/linux_a64/SMA/Configuration/Xresources/en_US/en_US_Dict.py
+sudo gedit /usr/SIMULIA/EstProducts/2023/linux_a64/SMA/Configuration/Xresources/en_US/en_US_Dict.py
 ```
 
 and increase font size:
@@ -324,7 +331,7 @@ For big displays font HELVETICA and sizes 17-20-25 are more appropriate:
 
 To use *gfortran* edit: 
 ```sh
-sudo gedit /usr/SIMULIA/EstProducts/2022/linux_a64/SMA/site/lnx86_64.env
+sudo gedit /usr/SIMULIA/EstProducts/2023/linux_a64/SMA/site/lnx86_64.env
 ```
 
 as follows:
