@@ -1,11 +1,8 @@
-# Abaqus 2020/2022 on Ubuntu 20.04
+# Abaqus 2023 on Ubuntu 24.04
 
 ## Intro
 
 Ubuntu seems to not be officially supported by the Abaqus installation procedure. This guide shows how to install the necessary libraries and how to tweak the installation files in order to install Abaqus on Ubuntu 20.04. To successfully follow this guide you need writing privileges ('sudo').
-
-*Note:*</br>
-This guide should also work for Abaqus 2021 (changing accordingly file names and paths) and Ubuntu 20.10 till 22.04, although I haven't tested it.
 
 ## Install prerequisites
 
@@ -25,23 +22,23 @@ To install them open a terminal and execute the following command:
 
 ```bash
 sudo apt update
-sudo apt install csh tcsh ksh gcc g++ gfortran libstdc++5 build-essential make libjpeg62 libmotif-dev
+sudo apt install csh tcsh ksh gfortran build-essential libmotif-dev
 ```
-
-Check the output of the installations and if there are errors try to install the ones that failed using the synaptic package manager. To install it, run:
-
-```bash
-sudo apt-get update
-sudo apt-get install synaptic
-```
-
-Once installed, open it and look for the aforementioned libraries and install them.
 
 ## Modify the Linux.sh file
 
 Since Ubuntu is not officially supported, trying to install Abaqus will result in an error. In order to fix it, prior launching
 the installation, locate all the **Linux.sh** files in the Abaqus installation folders, delete their content and past the following
 in each of them:
+
+path_to_abaqus_installation_folder/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/3/NETVIBES_Exalead_CloudView/Linux64/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/3/SIMULIA_FLEXnet_LicenseServer/Linux64/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/3/Search_Doc/Linux64/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/4/SIMULIA_EstablishedProducts/Linux64/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/5/SIMULIA_Documentation/AllOS/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/5/SIMULIA_EstablishedProducts_CAA_API/Linux64/1/inst/common/init/Linux.sh
+path_to_abaqus_installation_folder/5/SIMULIA_Isight/Linux64/1/inst/common/init/Linux.sh
 
 ```sh
   DSY_LIBPATH_VARNAME=LD_LIBRARY_PATH
@@ -87,17 +84,25 @@ which we'll undo after the installation.
 Once all the prerequisites are installed and the installation files modified, it is possible to proceed with the installation:
 ```bash
 cd path_to_abaqus_installation_folder/1
+```
+either (if the server has no x11 installed)
+```
+sudo ./StartTUI.sh
+```
+or (if the server has x11 installed)
+```
 sudo ./StartGUI.sh
 ```
+otherwise
 
 this will start the installation for all the Abaqus related products. Use standard locations for everything.
 ```bash
-/usr/SIMULIA/EstProducts/2022
+/usr/SIMULIA/EstProducts/2023
 ```
 When it asks for the license skip it "Skip licensing configuration" (otherwise it will cause an error) and proceed with the installation using the default locations for the software:
 ```bash
 /var/DassaultSystemes/SIMULIA/Commands
-/var/DassaultSystemes/SIMULIA/CAE/plugins/2022
+/var/DassaultSystemes/SIMULIA/CAE/plugins/2023
 ```
 
 Now that the installation is complete we revert the standard shell back to dash:
