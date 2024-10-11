@@ -8,16 +8,6 @@ Ubuntu seems to not be officially supported by the Abaqus installation procedure
 
 The standard Ubuntu release might not have one or more of the following libraries needed by Abaqus:
 
-* libjpeg
-* libstdc++ 4.7
-* openmotif 2.3
-* libgomp
-* libXm4
-* ksh
-* redhat-lsb-core-4.x
-* lsb-release-2.0
-* libpng12-0
-
 To install them open a terminal and execute the following command:
 
 ```bash
