@@ -159,7 +159,7 @@ sudo ln /var/DassaultSystemes/SIMULIA/Commands/abq2023 /usr/bin/abaqus
 ## Create temp directory for tosca
 
 ```sh
-sudo mkdir /usr/temnp
+sudo mkdir /usr/temp
 chmod 777 /usr/temp
 ```
 
