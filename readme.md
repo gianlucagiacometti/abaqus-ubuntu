@@ -160,7 +160,7 @@ sudo ln /var/DassaultSystemes/SIMULIA/Commands/abq2023 /usr/bin/abaqus
 
 ```sh
 sudo mkdir /usr/temp
-chmod 777 /usr/temp
+sudo chmod 777 /usr/temp
 ```
 
 ## Credits
