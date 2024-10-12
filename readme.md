@@ -79,6 +79,7 @@ Bevor exporting DSY_OS_Release it hat to be manipulated to trick the install rou
 DSY_OS_Release="centos"
 export DSY_OS_Release
 ```
+NOTE: Please change 2023 to 2024 in the following instructions if you have Abaqus 2024
 
 ## Run setup
 The setup of Abaqus requires a `bash` instead of a `dash` shell, whereas the latter is the default in Ubuntu. To temporary change that we symlink the shell command to `bash` by:
