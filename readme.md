@@ -156,6 +156,13 @@ In order to run Abaqus from any location, execute the following command:
 sudo ln /var/DassaultSystemes/SIMULIA/Commands/abq2023 /usr/bin/abaqus
 ```
 
+## Create temp directory for tosca
+
+```sh
+sudo mkdir /usr/temnp
+chmod 777 /usr/temp
+```
+
 ## Credits
 
 This guide is based on:
