@@ -1,4 +1,4 @@
-# Abaqus 2023 on Ubuntu 24.04
+# Abaqus 2023/2024 on Ubuntu 24.04
 
 ## Intro
 
@@ -70,6 +70,15 @@ path_to_abaqus_installation_folder/5/SIMULIA_Isight/Linux64/1/inst/common/init/L
 ```
 
 Note the changes: 1) the release version was forced to be `"CentOS"`, and 2) checking for prerequisites was disabled.
+
+### Modfication for Abaqus 2024
+Instead of Linux.sh the script CheckPrereq.sh (*/inst/common/checkers/Linux/CheckPrereq.sh) has to be changed. 
+Bevor exporting DSY_OS_Release it hat to be manipulated to trick the install routine into centos. 
+
+```sh
+DSY_OS_Release="centos"
+export DSY_OS_Release
+```
 
 ## Run setup
 The setup of Abaqus requires a `bash` instead of a `dash` shell, whereas the latter is the default in Ubuntu. To temporary change that we symlink the shell command to `bash` by:
